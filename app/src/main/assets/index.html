@@ -1,0 +1,20 @@
+<html>
+<head>
+    <script src="https://client-api.arkoselabs.com/fc/api/?onload=loadChallenge" async defer></script>
+</head>
+<body>
+<script type="text/javascript">
+        function loadChallenge() {
+            new ArkoseEnforcement({
+                public_key: "2FF9156C-1FE3-9558-6A63-07B0CD5B013C",
+                target_html: "CAPTCHA",
+                callback: function() {
+                    window.android.returnToken(document.getElementById("FunCaptcha-Token").value);
+                    window.android.setInvisible();
+                }
+            });
+        }
+     </script>
+<div id="CAPTCHA"></div>
+</body>
+</html>
